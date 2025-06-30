@@ -4,10 +4,10 @@ import org.openqa.selenium.By;
 
 public class LoginPage extends BasePage {
 
-    private By usernameField = By.id("user-name");
-    private By passwordField = By.id("password");
-    private By loginButton = By.id("login-button");
-    private By errorMessage = By.cssSelector("#login_button_container h3");
+    private final By usernameField = By.id("user-name");
+    private final By passwordField = By.id("password");
+    private final By loginButton = By.id("login-button");
+    private final By errorMessage = By.cssSelector("#login_button_container h3");
 
     public void setUsername(String username){
         set(usernameField, username);
@@ -17,7 +17,8 @@ public class LoginPage extends BasePage {
         set(passwordField, password);
     }
 
-    public ProductsPage clickLoginButton(){ // This is called Transition Method. Because after this method, we are TRANSITIONED to a different page.
+    public ProductsPage clickLoginButton(){
+        // This is called Transition Method. Because after this method, we are TRANSITIONED to a different page.
         click(loginButton);
         return new ProductsPage();
     }

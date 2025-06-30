@@ -10,7 +10,6 @@ public class BasePage {
 
     public void setDriver(WebDriver driver){
         BasePage.driver = driver;
-
     }
 
     protected WebElement find(By locator){
@@ -18,7 +17,6 @@ public class BasePage {
     }
 
     protected void set(By locator, String text){
-        // driver.findElement(locator);
         find(locator).clear();
         find(locator).sendKeys(text);
     }
