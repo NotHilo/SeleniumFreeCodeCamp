@@ -5,13 +5,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import part2.com.saucedemo.base.BaseTest;
 
-public class ProductTest extends BaseTest {
+public class ProductTest2 extends BaseTest {
 
     @Test
-    public void testProductsHeaderIsDisplayed(){
+    public void testProductHeaderDisplayed(){
         ProductsPage productsPage = loginPage.
                 logIntoApplication("standard_user", "secret_sauce");
-        Assert.assertTrue(productsPage.isProductsHeaderDisplayed(),
-                "\n Products Header Is Not Displayed \n"); // Message only shows up when fails
+        Assert.assertTrue(productsPage.isProductsHeaderDisplayed(), "'Products' is not displayed");
     }
 }
