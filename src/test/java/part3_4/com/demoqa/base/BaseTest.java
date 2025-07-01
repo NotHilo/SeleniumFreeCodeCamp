@@ -1,14 +1,14 @@
 package part3_4.com.demoqa.base;
 
 import com.demoqa.pages.HomePage;
-import com.saucedemo.pages.BasePage;
+import com.base.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-
+import static com.base.BasePage.delay;
 import static utilities.Utility.setUtilityDriver;
 
 public class BaseTest {
@@ -22,7 +22,7 @@ public class BaseTest {
     public void setUp(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("force-device-scale-factor=1.75");
-        driver = new ChromeDriver(options);
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
 
@@ -37,6 +37,7 @@ public class BaseTest {
 
     @AfterClass
     public void tearDown(){
+        delay(5000);
         driver.close();
     }
 }
